@@ -1,0 +1,324 @@
+{
+  "version": "1.0",
+  "engine": "linux|Transformer|1.35.0|6eca3ad331720c31a7e398ffaf002a896dc9a70a|2021-04-15_02:48:03AM",
+  "containerized": false,
+  "host_distro": {
+    "name": "Ubuntu",
+    "version": "20.04",
+    "display_name": "Ubuntu 20.04.2 LTS"
+  },
+  "type": "build",
+  "state": "done",
+  "target_reference": "my/sample-r-container",
+  "system": {
+    "type": "Linux",
+    "release": "5.8.0-50-generic",
+    "distro": {
+      "name": "Ubuntu",
+      "version": "20.04",
+      "display_name": "Ubuntu 20.04.2 LTS"
+    }
+  },
+  "source_image": {
+    "identity": {
+      "id": "sha256:b164e4a5c569b0328bc13fa6ba62881bad7252af25fce6b51d1495849abde99e",
+      "tags": [
+        "latest"
+      ],
+      "names": [
+        "my/sample-r-container:latest"
+      ]
+    },
+    "size": 824638345,
+    "size_human": "825 MB",
+    "create_time": "2021-04-21T00:28:44Z",
+    "docker_version": "19.03.8",
+    "architecture": "amd64",
+    "os": "linux",
+    "labels": {
+      "maintainer": "Carl Boettiger <cboettig@ropensci.org>",
+      "org.label-schema.license": "GPL-2.0",
+      "org.label-schema.vcs-url": "https://github.com/rocker-org/rocker-versioned",
+      "org.label-schema.vendor": "Rocker Project"
+    },
+    "env_vars": [
+      "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "R_VERSION=4.0.5",
+      "TERM=xterm",
+      "LC_ALL=en_US.UTF-8",
+      "LANG=en_US.UTF-8",
+      "R_HOME=/usr/local/lib/R",
+      "CRAN=https://packagemanager.rstudio.com/all/__linux__/focal/latest",
+      "TZ=Etc/UTC"
+    ]
+  },
+  "minified_image_size": 113990786,
+  "minified_image_size_human": "114 MB",
+  "minified_image": "my/sample-r-container.slim",
+  "minified_image_has_data": true,
+  "minified_by": 7.23425439842129,
+  "artifact_location": "/home/eric/bin/.docker-slim-state/images/b164e4a5c569b0328bc13fa6ba62881bad7252af25fce6b51d1495849abde99e/artifacts",
+  "container_report_name": "creport.json",
+  "seccomp_profile_name": "my-sample-r-container-seccomp.json",
+  "apparmor_profile_name": "my-sample-r-container-apparmor-profile",
+  "image_stack": [
+    {
+      "is_top_image": false,
+      "id": "sha256:26b77e58432b01665d7e876248c9056fa58bf4a7ab82576a024f5cf3dac146d6",
+      "full_name": "ubuntu:20.04",
+      "repo_name": "ubuntu",
+      "version_tag": "20.04",
+      "raw_tags": [
+        "ubuntu:20.04"
+      ],
+      "create_time": "2021-04-03T00:53:09Z",
+      "new_size": 72901830,
+      "new_size_human": "73 MB",
+      "instructions": [
+        {
+          "type": "ADD",
+          "time": "2021-04-03T00:53:06Z",
+          "is_nop": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 72901012,
+          "size_human": "73 MB",
+          "params": "file:27277aee655dd263ee698d1f2fe17f0b1dbba740615bcac8642723a6ac0d62be in /",
+          "command_snippet": "ADD file:27277aee655dd263ee698d1f2fe17f0b1db...",
+          "command_all": "ADD file:27277aee655dd263ee698d1f2fe17f0b1dbba740615bcac8642723a6ac0d62be /",
+          "target": "/",
+          "source_type": "file"
+        },
+        {
+          "type": "RUN",
+          "time": "2021-04-03T00:53:07Z",
+          "is_nop": false,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 811,
+          "size_human": "811 B",
+          "command_snippet": "RUN set -xe && \\\n\techo '#!/bin/sh' > /usr/sb...",
+          "command_all": "RUN set -xe && \\\n\techo '#!/bin/sh' > /usr/sbin/policy-rc.d && \\\n\techo 'exit 101' >> /usr/sbin/policy-rc.d && \\\n\tchmod +x /usr/sbin/policy-rc.d && \\\n\tdpkg-divert --local --rename --add /sbin/initctl && \\\n\tcp -a /usr/sbin/policy-rc.d /sbin/initctl && \\\n\tsed -i 's/^exit.*/exit 0/' /sbin/initctl && \\\n\techo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup && \\\n\techo 'DPkg::Post-Invoke { \"rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true\"; };' > /etc/apt/apt.conf.d/docker-clean && \\\n\techo 'APT::Update::Post-Invoke { \"rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true\"; };' >> /etc/apt/apt.conf.d/docker-clean && \\\n\techo 'Dir::Cache::pkgcache \"\"; Dir::Cache::srcpkgcache \"\";' >> /etc/apt/apt.conf.d/docker-clean && \\\n\techo 'Acquire::Languages \"none\";' > /etc/apt/apt.conf.d/docker-no-languages && \\\n\techo 'Acquire::GzipIndexes \"true\"; Acquire::CompressionTypes::Order:: \"gz\";' > /etc/apt/apt.conf.d/docker-gzip-indexes && \\\n\techo 'Apt::AutoRemove::SuggestsImportant \"false\";' > /etc/apt/apt.conf.d/docker-autoremove-suggests",
+          "system_commands": [
+            "set -xe",
+            "echo '#!/bin/sh' > /usr/sbin/policy-rc.d",
+            "echo 'exit 101' >> /usr/sbin/policy-rc.d",
+            "chmod +x /usr/sbin/policy-rc.d",
+            "dpkg-divert --local --rename --add /sbin/initctl",
+            "cp -a /usr/sbin/policy-rc.d /sbin/initctl",
+            "sed -i 's/^exit.*/exit 0/' /sbin/initctl",
+            "echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup",
+            "echo 'DPkg::Post-Invoke { \"rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true\"; };' > /etc/apt/apt.conf.d/docker-clean",
+            "echo 'APT::Update::Post-Invoke { \"rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true\"; };' >> /etc/apt/apt.conf.d/docker-clean",
+            "echo 'Dir::Cache::pkgcache \"\"; Dir::Cache::srcpkgcache \"\";' >> /etc/apt/apt.conf.d/docker-clean",
+            "echo 'Acquire::Languages \"none\";' > /etc/apt/apt.conf.d/docker-no-languages",
+            "echo 'Acquire::GzipIndexes \"true\"; Acquire::CompressionTypes::Order:: \"gz\";' > /etc/apt/apt.conf.d/docker-gzip-indexes",
+            "echo 'Apt::AutoRemove::SuggestsImportant \"false\";' > /etc/apt/apt.conf.d/docker-autoremove-suggests"
+          ]
+        },
+        {
+          "type": "RUN",
+          "time": "2021-04-03T00:53:08Z",
+          "is_nop": false,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "command_snippet": "RUN [ -z \"$(apt-get indextargets)\" ]",
+          "command_all": "RUN [ -z \"$(apt-get indextargets)\" ]",
+          "system_commands": [
+            "[ -z \"$(apt-get indextargets)\" ]"
+          ]
+        },
+        {
+          "type": "RUN",
+          "time": "2021-04-03T00:53:09Z",
+          "is_nop": false,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 7,
+          "size_human": "7 B",
+          "command_snippet": "RUN mkdir -p /run/systemd && \\\n\techo 'docker...",
+          "command_all": "RUN mkdir -p /run/systemd && \\\n\techo 'docker' > /run/systemd/container",
+          "system_commands": [
+            "mkdir -p /run/systemd",
+            "echo 'docker' > /run/systemd/container"
+          ]
+        },
+        {
+          "type": "CMD",
+          "time": "2021-04-03T00:53:09Z",
+          "is_last_instruction": true,
+          "is_nop": true,
+          "is_exec_form": true,
+          "local_image_exists": true,
+          "layer_index": 0,
+          "size": 0,
+          "params": "[\"/bin/bash\"]",
+          "command_snippet": "CMD [\"/bin/bash\"]",
+          "command_all": "CMD [\"/bin/bash\"]",
+          "raw_tags": [
+            "ubuntu:20.04"
+          ]
+        }
+      ]
+    },
+    {
+      "is_top_image": true,
+      "id": "sha256:b164e4a5c569b0328bc13fa6ba62881bad7252af25fce6b51d1495849abde99e",
+      "full_name": "my/sample-r-container:latest",
+      "repo_name": "my/sample-r-container",
+      "version_tag": "latest",
+      "raw_tags": [
+        "my/sample-r-container:latest"
+      ],
+      "create_time": "2021-04-21T00:28:44Z",
+      "new_size": 751736515,
+      "new_size_human": "752 MB",
+      "base_image_id": "sha256:26b77e58432b01665d7e876248c9056fa58bf4a7ab82576a024f5cf3dac146d6",
+      "instructions": [
+        {
+          "type": "LABEL",
+          "time": "2021-04-21T00:18:12Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:e7533db20a43897102d506b5580cf2498adeba87e4a0a971e5cc1dc23a143ebe",
+          "layer_index": 0,
+          "size": 0,
+          "params": "org.label-schema.license=GPL-2.0 org.label-schema.vcs-url=https://github.com/rocker-org/rocker-versioned org.label-schema.vendor=Rocker Project maintainer=Carl Boettiger <cboettig@ropensci.org>",
+          "command_snippet": "LABEL org.label-schema.license=GPL-2.0 org.l...",
+          "command_all": "LABEL org.label-schema.license=GPL-2.0 org.label-schema.vcs-url=https://github.com/rocker-org/rocker-versioned org.label-schema.vendor=Rocker Project maintainer=Carl Boettiger <cboettig@ropensci.org>"
+        },
+        {
+          "type": "ENV",
+          "time": "2021-04-21T00:18:12Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:5bbb57ead6c108e40e32f111d8241af213b68f0d0dfd26de41ea07fd596e8130",
+          "layer_index": 0,
+          "size": 0,
+          "params": "R_VERSION=4.0.5",
+          "command_snippet": "ENV R_VERSION=4.0.5",
+          "command_all": "ENV R_VERSION=4.0.5"
+        },
+        {
+          "type": "ENV",
+          "time": "2021-04-21T00:18:13Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:93078cc08966fd7946c7500c480a7b0adee3827feba6b583fdef2ec418be650c",
+          "layer_index": 0,
+          "size": 0,
+          "params": "TERM=xterm",
+          "command_snippet": "ENV TERM=xterm",
+          "command_all": "ENV TERM=xterm"
+        },
+        {
+          "type": "ENV",
+          "time": "2021-04-21T00:18:14Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:ccf1035d0027e2028528a7aca1eadddecf3ea6a595610afa52d14b6226b17528",
+          "layer_index": 0,
+          "size": 0,
+          "params": "LC_ALL=en_US.UTF-8",
+          "command_snippet": "ENV LC_ALL=en_US.UTF-8",
+          "command_all": "ENV LC_ALL=en_US.UTF-8"
+        },
+        {
+          "type": "ENV",
+          "time": "2021-04-21T00:18:15Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:ffad176b523a8cb822426ddca846c49dddd12e3cd969ce119a8172cc0f777126",
+          "layer_index": 0,
+          "size": 0,
+          "params": "LANG=en_US.UTF-8",
+          "command_snippet": "ENV LANG=en_US.UTF-8",
+          "command_all": "ENV LANG=en_US.UTF-8"
+        },
+        {
+          "type": "ENV",
+          "time": "2021-04-21T00:18:16Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:3f092df4c8be6f2f99f9e71b13961a21cbbffcdd94357c16d5ea01acb3c5befd",
+          "layer_index": 0,
+          "size": 0,
+          "params": "R_HOME=/usr/local/lib/R",
+          "command_snippet": "ENV R_HOME=/usr/local/lib/R",
+          "command_all": "ENV R_HOME=/usr/local/lib/R"
+        },
+        {
+          "type": "ENV",
+          "time": "2021-04-21T00:18:17Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:acc8e9e8db679e50d94696f7039cdc6bd63956688e56bc016c70767a6213cc47",
+          "layer_index": 0,
+          "size": 0,
+          "params": "CRAN=https://packagemanager.rstudio.com/all/__linux__/focal/latest",
+          "command_snippet": "ENV CRAN=https://packagemanager.rstudio.com/...",
+          "command_all": "ENV CRAN=https://packagemanager.rstudio.com/all/__linux__/focal/latest"
+        },
+        {
+          "type": "ENV",
+          "time": "2021-04-21T00:18:18Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:3b1af7956b238eb526ddfd48a99623efd696defc630df36fa3a6d7526b654cfc",
+          "layer_index": 0,
+          "size": 0,
+          "params": "TZ=Etc/UTC",
+          "command_snippet": "ENV TZ=Etc/UTC",
+          "command_all": "ENV TZ=Etc/UTC"
+        },
+        {
+          "type": "COPY",
+          "time": "2021-04-21T00:18:20Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:20212efa6455b23c3c91a85120f90288e51a8550673e47ab3a0bcef169cef9e1",
+          "layer_index": 0,
+          "size": 60250,
+          "size_human": "60 kB",
+          "params": "dir:b5944649d664d258d44d22cdcd4641eaa1ae1b0323d772bf24ef416b8764402d in /rocker_scripts",
+          "command_snippet": "COPY dir:b5944649d664d258d44d22cdcd4641eaa1a...",
+          "command_all": "COPY dir:b5944649d664d258d44d22cdcd4641eaa1ae1b0323d772bf24ef416b8764402d /rocker_scripts",
+          "target": "/rocker_scripts",
+          "source_type": "dir"
+        },
+        {
+          "type": "RUN",
+          "time": "2021-04-21T00:28:43Z",
+          "is_nop": false,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:fd8ddc5f81abbe04a191bfaa459fde6cd7c7ee652ec894a173edb364495c221d",
+          "layer_index": 0,
+          "size": 751676265,
+          "size_human": "752 MB",
+          "command_snippet": "RUN /rocker_scripts/install_R.sh",
+          "command_all": "RUN /rocker_scripts/install_R.sh",
+          "system_commands": [
+            "/rocker_scripts/install_R.sh"
+          ]
+        },
+        {
+          "type": "CMD",
+          "time": "2021-04-21T00:28:44Z",
+          "is_last_instruction": true,
+          "is_nop": true,
+          "is_exec_form": true,
+          "local_image_exists": true,
+          "layer_index": 0,
+          "size": 0,
+          "params": "[\"R\"]",
+          "command_snippet": "CMD [\"R\"]",
+          "command_all": "CMD [\"R\"]",
+          "raw_tags": [
+            "my/sample-r-container:latest"
+          ]
+        }
+      ]
+    }
+  ]
+}
