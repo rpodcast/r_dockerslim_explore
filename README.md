@@ -13,7 +13,14 @@ Here are the steps I followed to at least attempt minifying the Docker container
 
 ## Current status
 
-The `docker-slim build` command above is able to complete a build, although the user is prompted to hit ENTER to complete the process
+The `docker-slim build` command above is able to complete a build, although the user is prompted to hit ENTER to complete the process. Unfortunately R itself cannot be launched:
+
+```
+eric@xps9300 ~/d/r_dockerslim_explore (main)> docker run -it --rm --name="slim_r_session" my/sample-r-container.slim
+standard_init_linux.go:211: exec user process caused "no such file or directory"
+```
+
+Output of build process:
 
 ```
 eric@xps9300 ~/d/r_dockerslim_explore (main)> docker-slim build  --http-probe=false my/sample-r-container
