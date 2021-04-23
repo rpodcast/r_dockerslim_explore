@@ -8,5 +8,4 @@ COPY service /opt/my/service
 WORKDIR /opt/my/service
 
 EXPOSE 7123
-#CMD R -e "options('shiny.port'=80,shiny.host='0.0.0.0');hotshots.random::run_app()"
 ENTRYPOINT ["R","-e source('/opt/my/service/app.R')"]
