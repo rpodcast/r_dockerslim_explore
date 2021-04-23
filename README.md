@@ -2,7 +2,7 @@
 
 This repository contains explorations of using the [Docker Slim](https://github.com/docker-slim/docker-slim) project to minify Docker containers wrapping the R language for statistical computing. In the R community, containerized workflows are now becoming an important part of computing environment reproducibility, and a step forward to leveraging better software development best practices.  The [Rocker](https://www.rocker-project.org/) project is considered the standard bearer for hosting robust Docker containers enabling many workflows and capabilities of R in data science. The examples in this repository are Shiny web application,s which operates in a similar fashioin as a Python Flask or Dash application within the following subdirectories:
 
-* `small_app`: This is a very minimal Shiny application. It has been constructed to mirror as close as possible the structure of the [python2_flash_ubuntu14](https://github.com/docker-slim/examples/tree/master/python2_flask_ubuntu14)
+* `small_app`: This is a very minimal Shiny application. It has been constructed to mirror as close as possible the structure of the [python2_flash_ubuntu14](https://github.com/docker-slim/examples/tree/master/python2_flask_ubuntu14) example from the Docker-Slim example repository.
 * `big_app`: This is a much bigger Shiny app that mimics real-world usage. The `Dockerfile` of the app was actually generated automatically from another R package called [`golem`](https://github.com/ThinkR-open/golem) that helps bundle the application as an actual R package.  Fun fact: This application has been used in Martin's [Linux gaming streams](https://youtu.be/ow8A68ElPp0?t=525) to help select a car at random for HotShot Racing competitions!
 
 ## Development Notes
